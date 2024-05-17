@@ -17,6 +17,7 @@ public class OutputMessageModel {
         CHAT, JOIN, LEAVE
     }
 
+    // TODO: @AllArgsConstructor 추후 리팩토링
     public OutputMessageModel(String sender, String chatUuid, String content, String time, MessageType type) {
         this.sender = sender;
         this.chatUuid = chatUuid;

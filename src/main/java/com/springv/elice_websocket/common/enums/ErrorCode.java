@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public enum ErrorCode {
 
-    OUT_OF_STOCK(400, "재고가 부족.", "재고가 부족하여 주문이 어렵습니다.");
+    OUT_OF_STOCK(400, "재고 부족.", "재고가 부족하여 주문이 어렵습니다.");
 
     private final int status;
     private final String message;

@@ -1,7 +1,10 @@
 package com.springv.elice_websocket.common.event;
 
 
+import lombok.Getter;
+
 // Spring 4.2 -> ApplicationEvent 상속X
+@Getter
 public class AlarmEvent {
     private String chatUuid;
     private Object source;

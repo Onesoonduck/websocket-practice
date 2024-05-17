@@ -16,4 +16,13 @@ public class OutputMessageModel {
     public enum MessageType {
         CHAT, JOIN, LEAVE
     }
+
+    // TODO: @AllArgsConstructor 추후 리팩토링
+    public OutputMessageModel(String sender, String chatUuid, String content, String time, MessageType type) {
+        this.sender = sender;
+        this.chatUuid = chatUuid;
+        this.content = content;
+        this.time = time;
+        this.type = type;
+    }
 }

@@ -3,9 +3,13 @@ package com.springv.elice_websocket.book.service;
 
 import com.springv.elice_websocket.book.domain.Book;
 import com.springv.elice_websocket.book.model.BookRequest;
+import com.springv.elice_websocket.book.model.BookResponse;
 import com.springv.elice_websocket.repository.book.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RequiredArgsConstructor
@@ -20,5 +24,12 @@ public class BookService {
         bookRepository.save(book);
 
         return "책 등록에 성공하였습니다.";
+    }
+
+    public List<BookResponse> getBookList() {
+        List<Book> bookList = bookRepository.findAll();
+        return bookList.stream()
+                .map(book -> new BookResponse(book.getBookCode(), book.getName(), book.getQuantity()))
+                .collect(Collectors.toList());
     }
 }

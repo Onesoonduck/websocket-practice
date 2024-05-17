@@ -1,6 +1,3 @@
-# websocket-practice
-
-
 # elice WebSocket Project Practice
 
 # 진행 상황 

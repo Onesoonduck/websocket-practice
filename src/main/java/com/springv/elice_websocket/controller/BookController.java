@@ -1,13 +1,13 @@
 package com.springv.elice_websocket.controller;
 
 
+import com.springv.elice_websocket.book.model.BookResponse;
 import com.springv.elice_websocket.book.service.BookService;
 import com.springv.elice_websocket.book.model.BookRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RequestMapping("/api")
@@ -22,5 +22,10 @@ public class BookController {
     @PostMapping("/book")
     public String saveBook(@RequestBody BookRequest bookRequest) {
         return bookService.saveBook(bookRequest);
+    }
+
+    @GetMapping("/book/list")
+    public List<BookResponse> getBookList() {
+        return bookService.getBookList();
     }
 }

@@ -16,4 +16,12 @@ public class OutputMessageModel {
     public enum MessageType {
         CHAT, JOIN, LEAVE
     }
+
+    public OutputMessageModel(String sender, String chatUuid, String content, String time, MessageType type) {
+        this.sender = sender;
+        this.chatUuid = chatUuid;
+        this.content = content;
+        this.time = time;
+        this.type = type;
+    }
 }

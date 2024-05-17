@@ -1,6 +1,7 @@
 package com.springv.elice_websocket.order.service;
 
 import com.springv.elice_websocket.book.domain.Book;
+import com.springv.elice_websocket.common.exception.OutOfStockException;
 import com.springv.elice_websocket.order.domain.Order;
 import com.springv.elice_websocket.order.model.OrderRequest;
 import com.springv.elice_websocket.order.model.OrderResponse;
@@ -26,7 +27,7 @@ public class OrderService {
 
         //재고 조회
         if (isStockInSufficient(orderRequest.getQuantity(), book.getQuantity())) {
-            throw new RuntimeException();
+            throw new OutOfStockException();
         }
 
         Order order = new Order(orderRequest.getBookCode(), orderRequest.getBookName(), orderRequest.getQuantity());

@@ -6,8 +6,8 @@ import lombok.Getter;
 public class RootException extends RuntimeException {
     private String message;
 
-    public RootException(String message, String message1) {
+    public RootException(String message) {
         super(message);
-        this.message = message1;
+        this.message = message;
     }
 }

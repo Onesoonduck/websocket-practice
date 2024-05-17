@@ -1,5 +1,8 @@
 package com.springv.elice_websocket.common.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum ErrorCode {
 
     OUT_OF_STOCK(400, "재고가 부족.", "재고가 부족하여 주문이 어렵습니다.");
